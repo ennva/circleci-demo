@@ -30,6 +30,7 @@ jobs:
           name: Running the Node Container
           command: |
             node -v
+  # running approval completion job
   Now-Complete:
     docker:
       - image: alpine:3.15
@@ -38,6 +39,20 @@ jobs:
           name: Approval Complete
           command: |
             echo 'The work is now complete.'
+  # checking environment variables
+  Echo-Env-Variables:
+    docker:
+      - image: djass/ubuntu-v1.0.0:latest
+        auth:
+          username: $DOCKERHUB_USERNAME
+          password: $DOCKERHUB_PASSWORD
+    steps:
+      - checkout
+      - run:
+        name: "echo environment variable that is part of the project"
+        command: |
+          echo $DOCKERHUB_USERNAME
+          echo $DOCKERHUB_PASSWORD
 workflows:
   Example-Workflow:
     jobs:
