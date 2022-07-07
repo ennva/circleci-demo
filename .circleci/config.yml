@@ -49,10 +49,10 @@ jobs:
     steps:
       - checkout
       - run:
-        name: "echo environment variable that is part of the project"
-        command: |
-          echo $DOCKERHUB_USERNAME
-          echo $DOCKERHUB_PASSWORD
+          name: "echo environment variable that is part of the project"
+          command: |
+            echo $DOCKERHUB_USERNAME
+            echo $DOCKERHUB_PASSWORD
 workflows:
   Example-Workflow:
     jobs:
