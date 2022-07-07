@@ -11,7 +11,7 @@ jobs:
             echo 'This is the delivery pipeline'
   Fetch-Code:
     docker:
-      - image: cimd/base:2021.04
+      - image: cimg/base:2021.04
     steps:
       - checkout
       - run:
