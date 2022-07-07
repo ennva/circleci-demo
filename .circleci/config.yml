@@ -71,3 +71,6 @@ workflows:
       - Now-Complete:
           requires:
             - Hold-for-Approval
+      - Echo-Env-Variables:
+          requires:
+            - Now-Complete
